@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Strona admina</a></li>
+  </ol>
+</nav>
+    <div id="box" class="col-md d-flex justify-content-center align-items-center flex-column">
+
+<form class="row g-3 needs-validation" method="POST" action="/admin/addfilm" novalidate> 
+{{>film-form}}
+</form>
+
+{{#if alert}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}

@@ -1,0 +1,37 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nazwa</th>
+      <th scope="col">Kategoria</th>
+      <th scope="col">Czas</th>
+      <th scope="col">Cena zł</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.category}}</td>
+      <td>{{this.time}}</td>
+      <td>{{this.price}}</td>
+      <td class="text-end">
+        <a href="/cart/remove/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>Usuń</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+  <form class="row g-3 needs-validation" method="POST" action="/cart/buy/{{userID}}" novalidate> 
+  <button class="btn btn-danger">KUP</button>
+  </form>
+</table>
+
+
+{{#if price}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    Zakupiono rzeczy na kwotę: {{price}}. Proszę zobaczyć wiadomość email.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}

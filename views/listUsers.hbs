@@ -1,0 +1,33 @@
+    <a href="/admin" type="button" class="btn btn-primary align-self-center">Powrót</a>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Imie</th>
+      <th scope="col">Nazwisko</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefon</th>
+      <th scope="col" class="text-end">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.firstname}}</td>
+      <td>{{this.surname}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.status}}</td>
+      <td class="text-end">
+        <a href="/admin/edituser/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>Edytuj</a>
+        <a href="/admin/remove/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i>Usuń</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+

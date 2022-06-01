@@ -1,0 +1,35 @@
+    <a href="/admin" type="button" class="btn btn-primary align-self-center">Powrót</a>
+    <a href="/admin/newfilm" type="button" class="btn btn-primary align-self-center">Nowy</a>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nazwa</th>
+      <th scope="col">Kategoria</th>
+      <th scope="col">Czas</th>
+      <th scope="col">Cena</th>
+      <th scope="col">IMG-link</th>
+      <th scope="col" class="text-end">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.category}}</td>
+      <td>{{this.time}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.img_link}}</td>
+      <td class="text-end">
+        <a href="/admin/editfilm/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>Edytuj</a>
+        <a href="/admin/removefilm/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i>Usuń</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
